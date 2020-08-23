@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/carbon_teal_600</color>
+    <color name="colorPrimaryDark">@color/carbon_teal_600</color>
+    <color name="colorAccent">@color/carbon_teal_600</color>
+
+
+    <color name="total_cases">@color/carbon_yellow_500</color>
+    <color name="recover">@color/carbon_blue_a400</color>
+    <color name="deatch">@color/carbon_red_500</color>
+    <color name="active">@color/carbon_cyan_900</color>
+
+</resources>

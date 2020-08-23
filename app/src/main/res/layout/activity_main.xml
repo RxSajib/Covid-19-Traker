@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/carbon_white_70"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/TrackOne"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <org.eazegraph.lib.charts.PieChart
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/piechart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:padding="10dp" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/total_cases"></View>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Total Case"
+                        android:textSize="@dimen/_13sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/recover"></View>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Recover"
+                        android:textSize="@dimen/_13sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/deatch"></View>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Deaths"
+                        android:textSize="@dimen/_13sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/active"></View>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Active"
+                        android:textSize="@dimen/_13sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/TrackCountriesButtonID"
+        android:layout_below="@id/TrackOne"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.leo.simplearcloader.SimpleArcLoader
+                android:visibility="gone"
+                android:id="@+id/loader"
+                android:layout_centerInParent="true"
+                android:layout_width="60dp"
+                app:arc_style="simple_arc"
+                android:layout_height="60dp">
+            </com.leo.simplearcloader.SimpleArcLoader>
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="GLOBAL STATUS"
+                        android:textSize="@dimen/_20sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="@color/carbon_black_6" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Cases"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/TotlaCasesText"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="0"
+                                android:textColor="@color/carbon_orange_300"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <View
+                                android:layout_width="match_parent"
+
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/carbon_black_6" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Recovered"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="0"
+                                android:id="@+id/TotalRecoverText"
+                                android:textColor="@color/carbon_orange_300"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <View
+                                android:layout_width="match_parent"
+
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/carbon_black_6" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Critical"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="0"
+                                android:id="@+id/TotalCritical"
+                                android:textColor="@color/carbon_orange_300"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <View
+                                android:layout_width="match_parent"
+
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/carbon_black_6" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Active"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="0"
+                                android:id="@+id/TotalActive"
+                                android:textColor="@color/carbon_orange_300"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <View
+                                android:layout_width="match_parent"
+
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/carbon_black_6" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Today Cases"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="0"
+                                android:id="@+id/TotalTodayCases"
+                                android:textColor="@color/carbon_orange_300"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <View
+                                android:layout_width="match_parent"
+
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/carbon_black_6" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Today Deathes"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="0"
+                                android:id="@+id/TotalDeaths"
+                                android:textColor="@color/carbon_orange_300"
+                                android:textSize="@dimen/_13sdp">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <View
+                                android:layout_width="match_parent"
+
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/carbon_black_6" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:id="@+id/TrackCountriesButtonID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/track_countries_button">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="TRACK COUNTRIES"
+            android:textColor="@color/carbon_white"
+            android:textSize="@dimen/_14sdp">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
